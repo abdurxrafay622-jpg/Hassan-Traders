@@ -1,0 +1,390 @@
+:root {
+    --bg-black: #0F1115;
+    --card-black: #1A1D24;
+    --border-color: #2D323F;
+    --accent-blue: #0066FF;
+    --accent-blue-hover: #0052CC;
+    --accent-yellow: #FACC15;
+    --accent-yellow-hover: #EAB308;
+    --text-white: #F8FAFC;
+    --text-gray: #94A3B8;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--bg-black);
+    color: var(--text-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(250, 204, 21, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0); }
+}
+
+.animate-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- HEADER & NAVIGATION (Unchanged & Perfect) --- */
+header {
+    background-color: rgba(15, 17, 21, 0.95);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    animation: fadeInDown 0.5s ease-out;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-white);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.logo span {
+    color: var(--accent-yellow);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links a {
+    color: var(--text-gray);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+    padding: 0.2rem 0;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--accent-yellow);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--accent-yellow);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--text-white);
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.hamburger:hover {
+    color: var(--accent-yellow);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    background: linear-gradient(135deg, rgba(15,17,21,0.9), rgba(0,102,255,0.15)), url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1920&q=80') center/cover;
+    padding: 6rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 0.7s ease-out;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+.hero h1 span {
+    color: var(--accent-blue);
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    margin-bottom: 2rem;
+}
+
+.hero-btns {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* --- BUTTONS --- */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    font-weight: 600;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+}
+
+.btn-yellow {
+    background-color: var(--accent-yellow);
+    color: #000;
+}
+
+.btn-yellow:hover {
+    background-color: var(--accent-yellow-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(250, 204, 21, 0.3);
+}
+
+.btn-blue {
+    background-color: var(--accent-blue);
+    color: #fff;
+}
+
+.btn-blue:hover {
+    background-color: var(--accent-blue-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 102, 255, 0.4);
+}
+
+/* --- CATEGORIES & COMMON SECTIONS --- */
+.categories, .featured-products, .why-us, .testimonials {
+    max-width: 1200px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.section-title span {
+    color: var(--accent-yellow);
+}
+
+.category-grid, .product-grid, .features-grid, .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.category-card, .product-card, .feature-card, .testimonial-card {
+    background-color: var(--card-black);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.category-card:hover, .product-card:hover, .feature-card:hover, .testimonial-card:hover {
+    border-color: var(--accent-yellow);
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(255, 217, 0, 0.15);
+}
+
+.category-card i, .feature-card i {
+    font-size: 2.5rem;
+    color: var(--accent-yellow);
+    margin-bottom: 1rem;
+    transition: var(--transition);
+}
+
+.category-card:hover i, .feature-card:hover i {
+    transform: scale(1.1);
+}
+
+.category-card h3, .product-card h3, .feature-card h3, .testimonial-card h4 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.category-card p, .product-card p, .feature-card p, .testimonial-card p {
+    font-size: 0.88rem;
+    color: var(--text-gray);
+}
+
+/* --- FEATURED PRODUCTS SPECIFIC --- */
+.product-card {
+    text-align: left;
+    padding: 1.5rem;
+}
+
+.product-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.product-price {
+    color: var(--accent-yellow);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 0.8rem 0;
+}
+
+/* --- TESTIMONIALS SPECIFIC --- */
+.testimonial-card {
+    text-align: left;
+    border-left: 4px solid var(--accent-yellow);
+}
+
+.testimonial-card .stars {
+    color: var(--accent-yellow);
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #090A0D;
+    border-top: 1px solid var(--border-color);
+    padding: 3rem 2rem 1.5rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-col h4 {
+    color: var(--accent-yellow);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-col ul li a {
+    color: var(--text-gray);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-col ul li a:hover {
+    color: var(--accent-yellow);
+    padding-left: 4px;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+    color: var(--text-gray);
+    font-size: 0.85rem;
+}
+
+/* --- RESPONSIVE DESIGN & DROPDOWN ANIMATION --- */
+@media (max-width: 992px) {
+    .hamburger {
+        display: block;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(15, 17, 21, 0.98);
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        border-bottom: 0 solid var(--border-color);
+        text-align: center;
+        backdrop-filter: blur(15px);
+        /* Smooth dropdown animation configuration */
+        transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out, border-bottom 0.4s ease-in-out;
+    }
+    .nav-links.active {
+        max-height: 500px;
+        padding: 1.5rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .hero-btns {
+        flex-direction: column;
+    }
+}

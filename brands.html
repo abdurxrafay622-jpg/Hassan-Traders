@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner Brands | Hassan Traders - Industrial & Home Hardware</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .brands-hero {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(15,17,21,0.95), rgba(0,102,255,0.1));
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .brands-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .brands-hero h1 span {
+            color: var(--accent-yellow);
+        }
+
+        .brands-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-gray);
+            font-size: 1.05rem;
+        }
+
+        .brands-container {
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 5rem;
+        }
+
+        .brand-card {
+            background-color: var(--card-black);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .brand-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 102, 255, 0.15);
+        }
+
+        .brand-logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-white);
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .brand-logo-text span {
+            color: var(--accent-yellow);
+        }
+
+        .brand-origin {
+            font-size: 0.8rem;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .brand-card p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .brand-badge {
+            margin-top: auto;
+            background-color: #15181f;
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--text-gray);
+        }
+
+        .quality-banner {
+            background: linear-gradient(135deg, #15181f, #0c0e12);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .quality-banner h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-white);
+        }
+
+        .quality-banner h2 span {
+            color: var(--accent-yellow);
+        }
+
+        .quality-banner p {
+            color: var(--text-gray);
+            max-width: 650px;
+            margin: 0 auto;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo"><i class="fa-solid fa-screwdriver-wrench" style="color: var(--accent-yellow);"></i>Hassan<span>Traders</span></a>
+            <button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="bulk-orders.html">B2B</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="brands.html" class="active">Brands</a></li>
+                <li><a href="resources.html">Guides</a></li>
+                <li><a href="quote.html">Quote</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="brands-hero">
+        <div class="hero-container">
+            <h1>Authorized <span>Partner Brands</span></h1>
+            <p>We partner directly with world-renowned manufacturers to bring you authentic, heavy-duty industrial tools and reliable hardware solutions.</p>
+        </div>
+    </section>
+
+    <div class="brands-container">
+        <div class="brands-grid">
+            <div class="brand-card">
+                <div class="brand-logo-text">DEWALT<span>.</span></div>
+                <div class="brand-origin">United States</div>
+                <p>Industry leaders in heavy-duty cordless power tools, high-capacity lithium-ion batteries, and rugged jobsite equipment.</p>
+                <div class="brand-badge">Authorized Distributor</div>
+            </div>
+
+            <div class="brand-card">
+                <div class="brand-logo-text">BOSCH<span>.</span></div>
+                <div class="brand-origin">Germany</div>
+                <p>Precision-engineered rotary hammers, laser measuring devices, angle grinders, and professional woodworking accessories.</p>
+                <div class="brand-badge">Authorized Distributor</div>
+            </div>
+
+            <div class="brand-card">
+                <div class="brand-logo-text">MAKITA<span>.</span></div>
+                <div class="brand-origin">Japan</div>
+                <p>Innovative brushless motor technology, lightweight cordless saws, and durable multi-volt operational power systems.</p>
+                <div class="brand-badge">Authorized Distributor</div>
+            </div>
+
+            <div class="brand-card">
+                <div class="brand-logo-text">STANLEY<span>.</span></div>
+                <div class="brand-origin">United States</div>
+                <p>Time-tested hand tools, drop-forged steel spanners, precision tape measures, and heavy-duty storage organizers.</p>
+                <div class="brand-badge">Authorized Distributor</div>
+            </div>
+
+            <div class="brand-card">
+                <div class="brand-logo-text">MILWAUKEE<span>.</span></div>
+                <div class="brand-origin">United States</div>
+                <p>Heavy-duty REDLINK intelligence power solutions, high-torque impact wrenches, and contractor jobsite lighting.</p>
+                <div class="brand-badge">Authorized Distributor</div>
+            </div>
+
+            <div class="brand-card">
+                <div class="brand-logo-text">IRWIN<span>.</span></div>
+                <div class="brand-origin">United States</div>
+                <p>Professional clamping tools, VISE-GRIP locking pliers, high-speed steel drill bits, and precision cutting blades.</p>
+                <div class="brand-badge">Authorized Distributor</div>
+            </div>
+        </div>
+
+        <div class="quality-banner">
+            <h2>100% Genuine <span>Manufacturer Guarantee</span></h2>
+            <p>Every tool, machine, and hardware component purchased from Hassan Traders is backed by official manufacturer warranties and direct factory support. We strictly prohibit counterfeit or unverified products to ensure total safety and performance on your jobsites.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Hassan Traders</h4>
+                <p style="color: var(--text-gray); font-size: 0.9rem;">Providing dependable, top-grade industrial and structural hardware supplies for contractors and commercial businesses.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Product Catalog</a></li>
+                    <li><a href="quote.html">Request a Quote</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Industries</h4>
+                <ul>
+                    <li><a href="categories.html">Construction & Masonry</a></li>
+                    <li><a href="categories.html">Electrical Wiring</a></li>
+                    <li><a href="categories.html">Woodworking</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p style="color: var(--text-gray); font-size: 0.9rem;">Email: info@hassantraders.com<br>Phone: +1 (555) 382-9011</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+           <p>&copy; 2026 <span style="color: var(--accent-yellow);">Hassan Traders.</span> All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

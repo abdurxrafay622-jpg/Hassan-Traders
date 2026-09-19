@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B2B Bulk Orders | Hassan Traders - Industrial & Home Hardware</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .b2b-hero {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(15,17,21,0.95), rgba(0,102,255,0.1));
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .b2b-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .b2b-hero h1 span {
+            color: var(--accent-yellow);
+        }
+
+        .b2b-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-gray);
+            font-size: 1.05rem;
+        }
+
+        .b2b-container {
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+        }
+
+        .b2b-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 5rem;
+        }
+
+        @media (max-width: 768px) {
+            .b2b-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .b2b-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .b2b-text h2 span {
+            color: var(--accent-yellow);
+        }
+
+        .b2b-text p {
+            color: var(--text-gray);
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .benefits-list li {
+            color: var(--text-white);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .benefits-list li i {
+            color: var(--accent-yellow);
+        }
+
+        .b2b-form-card {
+            background-color: var(--card-black);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2.5rem;
+        }
+
+        .b2b-form-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-yellow);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-bottom: 0.4rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background-color: #15181f;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            color: var(--text-white);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            height: 120px;
+        }
+
+        .wholesale-tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .tier-card {
+            background-color: var(--card-black);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .tier-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 102, 255, 0.15);
+        }
+
+        .tier-card h4 {
+            font-size: 1.3rem;
+            color: var(--text-white);
+            margin-bottom: 0.5rem;
+        }
+
+        .tier-discount {
+            font-size: 2rem;
+            color: var(--accent-yellow);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .tier-card p {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo"><i class="fa-solid fa-screwdriver-wrench" style="color: var(--accent-yellow);"></i>Hassan<span>Traders</span></a>
+            <button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="bulk-orders.html" class="active">B2B</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="brands.html">Brands</a></li>
+                <li><a href="resources.html">Guides</a></li>
+                <li><a href="quote.html">Quote</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="b2b-hero">
+        <div class="hero-container">
+            <h1>B2B Wholesale & <span>Contractor Supply</span></h1>
+            <p>Partner with Hassan Traders for dedicated commercial supply chains, tiered volume discounts, and priority jobsite fulfillment.</p>
+        </div>
+    </section>
+
+    <div class="b2b-container">
+        <div class="b2b-grid">
+            <div class="b2b-text">
+                <h2>Empowering Contractors & <span>Commercial Enterprises</span></h2>
+                <p>We understand that construction deadlines and large-scale industrial projects require consistent, reliable inventory and responsive wholesale partnerships. Our B2B division is built to streamline your supply chain.</p>
+                <p>From multi-unit residential builds to large commercial developments, we supply authentic power equipment and structural hardware at competitive commercial rates.</p>
+                
+                <ul class="benefits-list">
+                    <li><i class="fa-solid fa-check-circle"></i> Dedicated account manager for corporate partners</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Flexible commercial credit terms and invoicing</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Priority dispatch and direct jobsite delivery</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Custom inventory stocking for long-term projects</li>
+                </ul>
+            </div>
+
+            <div class="b2b-form-card">
+                <h3>Request Wholesale Account</h3>
+                <form>
+                    <div class="form-group">
+                        <label>Company Name</label>
+                        <input type="text" class="form-control" placeholder="Enter business or contractor name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Person</label>
+                        <input type="text" class="form-control" placeholder="Full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Business Email</label>
+                        <input type="email" class="form-control" placeholder="name@company.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Estimated Monthly Volume</label>
+                        <select class="form-control">
+                            <option>$1,000 - $5,000 / month</option>
+                            <option>$5,000 - $15,000 / month</option>
+                            <option>$15,000+ / month</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Project Details / Requirements</label>
+                        <textarea class="form-control" placeholder="Describe the type of hardware or tools required..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-yellow" style="width: 100%; margin-top: 1rem;">Submit Application</button>
+                </form>
+            </div>
+        </div>
+
+        <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem; color: var(--accent-yellow); display: flex; align-items: center; justify-content: center; gap: 10px;">
+            Volume Discount <span style="display: inline-block; width: 220px; vertical-align: middle;"><marquee behavior="alternate" scrollamount="3" style="width: 200px; color: var(--accent-blue);">Structure</marquee></span>
+        </h2>
+        <div class="wholesale-tiers">
+            <div class="tier-card">
+                <h4>Tier 1 Partner</h4>
+                <div class="tier-discount">10% OFF</div>
+                <p>For independent contractors and small construction teams ordering regular mid-sized hardware batches.</p>
+            </div>
+            <div class="tier-card">
+                <h4>Tier 2 Partner</h4>
+                <div class="tier-discount">18% OFF</div>
+                <p>Designed for growing development firms and mechanical contractors requiring recurring bulk inventory.</p>
+            </div>
+            <div class="tier-card">
+                <h4>Enterprise Partner</h4>
+                <div class="tier-discount">Custom</div>
+                <p>Tailored wholesale contracts, custom pricing frameworks, and dedicated priority dispatch logistics.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Hassan Traders</h4>
+                <p style="color: var(--text-gray); font-size: 0.9rem;">Providing dependable, top-grade industrial and structural hardware supplies for contractors and commercial businesses.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Product Catalog</a></li>
+                    <li><a href="quote.html">Request a Quote</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Industries</h4>
+                <ul>
+                    <li><a href="categories.html">Construction & Masonry</a></li>
+                    <li><a href="categories.html">Electrical Wiring</a></li>
+                    <li><a href="categories.html">Woodworking</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p style="color: var(--text-gray); font-size: 0.9rem;">Email: info@hassantraders.com<br>Phone: +1 (555) 382-9011</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+           <p>&copy; 2026 <span style="color: var(--accent-yellow);">Hassan Traders.</span> All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

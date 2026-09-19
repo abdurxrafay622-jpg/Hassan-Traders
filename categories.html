@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Categories | Hassan Traders - Industrial & Home Hardware</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .categories-hero {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(15,17,21,0.95), rgba(0,102,255,0.1));
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .categories-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .categories-hero h1 span {
+            color: var(--accent-yellow);
+        }
+
+        .categories-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-gray);
+            font-size: 1.05rem;
+        }
+
+        .categories-container {
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+        }
+
+        .category-full-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .dept-card {
+            background-color: var(--card-black);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .dept-card:hover {
+            border-color: var(--accent-yellow);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(255, 238, 0, 0.2);
+        }
+
+        .dept-icon {
+            font-size: 3rem;
+            color: var(--accent-blue);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .dept-card:hover .dept-icon {
+            transform: scale(1.15);
+        }
+
+        .dept-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-white);
+        }
+
+        .dept-card p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .dept-link {
+            color: var(--accent-yellow);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: auto;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .dept-link:hover {
+            color: var(--text-white);
+            gap: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo"><i class="fa-solid fa-screwdriver-wrench" style="color: var(--accent-yellow);"></i>Hassan<span>Traders</span></a>
+            <button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="categories.html" class="active">Categories</a></li>
+                <li><a href="bulk-orders.html">B2B</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="brands.html">Brands</a></li>
+                <li><a href="resources.html">Guides</a></li>
+                <li><a href="quote.html">Quote</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="categories-hero">
+        <div class="hero-container">
+            <h1>Industrial <span>Departments</span></h1>
+            <p>Browse our specialized product divisions curated for contractors, mechanical engineers, and professional tradespeople.</p>
+        </div>
+    </section>
+
+    <div class="categories-container">
+        <div class="category-full-grid">
+            <div class="dept-card">
+                <i class="fa-solid fa-bolt dept-icon"></i>
+                <h3>Power Tools & Equipment</h3>
+                <p>Heavy-duty cordless drills, high-torque impact wrenches, angle grinders, and professional jobsite generators.</p>
+                <a href="products.html" class="dept-link">Browse Department <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="dept-card">
+                <i class="fa-solid fa-hammer dept-icon"></i>
+                <h3>Hand Tools & Hardware</h3>
+                <p>Drop-forged steel wrenches, precision socket sets, professional hammers, saws, and structural fasteners.</p>
+                <a href="products.html" class="dept-link">Browse Department <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="dept-card">
+                <i class="fa-solid fa-faucet dept-icon"></i>
+                <h3>Commercial Plumbing</h3>
+                <p>Brass pipe connectors, heavy-duty valves, flexible tubing, PVC couplings, and high-pressure sealing components.</p>
+                <a href="products.html" class="dept-link">Browse Department <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="dept-card">
+                <i class="fa-solid fa-hard-hat dept-icon"></i>
+                <h3>OSHA Safety Gear</h3>
+                <p>Impact-resistant hard hats, high-visibility protective vests, reinforced work gloves, and safety goggles.</p>
+                <a href="products.html" class="dept-link">Browse Department <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="dept-card">
+                <i class="fa-solid fa-plug dept-icon"></i>
+                <h3>Electrical & Wiring</h3>
+                <p>Industrial copper wiring spools, circuit breakers, heavy-duty junction boxes, and distribution panels.</p>
+                <a href="products.html" class="dept-link">Browse Department <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="dept-card">
+                <i class="fa-solid fa-tree dept-icon"></i>
+                <h3>Woodworking & Masonry</h3>
+                <p>Precision circular saw blades, masonry drill bits, heavy-duty clamps, and commercial wood adhesives.</p>
+                <a href="products.html" class="dept-link">Browse Department <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Hassan Traders</h4>
+                <p style="color: var(--text-gray); font-size: 0.9rem;">Providing dependable, top-grade industrial and structural hardware supplies for contractors and commercial businesses.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Product Catalog</a></li>
+                    <li><a href="quote.html">Request a Quote</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Industries</h4>
+                <ul>
+                    <li><a href="categories.html">Construction & Masonry</a></li>
+                    <li><a href="categories.html">Electrical Wiring</a></li>
+                    <li><a href="categories.html">Woodworking</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p style="color: var(--text-gray); font-size: 0.9rem;">Email: info@hassantraders.com<br>Phone: +1 (555) 382-9011</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 <span style="color: var(--accent-yellow);">Hassan Traders.</span> All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

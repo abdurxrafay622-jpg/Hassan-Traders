@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guides & Resources | Hassan Traders - Industrial & Home Hardware</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .resources-hero {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(15,17,21,0.95), rgba(0,102,255,0.1));
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .resources-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .resources-hero h1 span {
+            color: var(--accent-yellow);
+        }
+
+        .resources-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-gray);
+            font-size: 1.05rem;
+        }
+
+        .resources-container {
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .resource-card {
+            background-color: var(--card-black);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .resource-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 102, 255, 0.15);
+        }
+
+        .resource-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-yellow);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .resource-card h3 {
+            font-size: 1.3rem;
+            color: var(--text-white);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .resource-card p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .resource-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: var(--transition);
+        }
+        .resource-link li{
+            color: var(--accent-yellow) !important;
+        }
+
+        .resource-link:hover {
+            color: var(--accent-yellow);
+            gap: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo"><i class="fa-solid fa-screwdriver-wrench" style="color: var(--accent-yellow);"></i>Hassan<span>Traders</span></a>
+            <button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="bulk-orders.html">B2B</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="brands.html">Brands</a></li>
+                <li><a href="resources.html" class="active">Guides</a></li>
+                <li><a href="quote.html">Quote</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="resources-hero">
+        <div class="hero-container">
+            <h1>Expert Guides & <span>Resources</span></h1>
+            <p>Explore technical handbooks, equipment maintenance tips, and selection guides to help you make informed decisions on the jobsite.</p>
+        </div>
+    </section>
+
+    <div class="resources-container">
+        <div class="resources-grid">
+            <div class="resource-card">
+                <div class="resource-tag">Power Tools</div>
+                <h3>Choosing the Right Brushless Motor Drill for Heavy Construction</h3>
+                <p>Understand the differences between voltage ratings, torque specs, and impact mechanisms to select the ideal cordless drill for structural framing.</p>
+                <a href="#" class="resource-link">Read Full Guide <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-tag">Safety Compliance</div>
+                <h3>OSHA Standards: Essential PPE Requirements for Commercial Jobsites</h3>
+                <p>A comprehensive checklist covering hard hat ratings, high-visibility vest classes, and fall protection harness inspection protocols.</p>
+                <a href="#" class="resource-link">Read Full Guide <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-tag">Plumbing & Piping</div>
+                <h3>PEX vs. Copper Piping: Which is Best for Commercial Plumbing?</h3>
+                <p>An in-depth comparison of durability, installation speed, cost-effectiveness, and pressure resistance for modern building projects.</p>
+                <a href="#" class="resource-link">Read Full Guide <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-tag">Maintenance</div>
+                <h3>Proactive Maintenance Tips to Extend Power Tool Lifespan</h3>
+                <p>Learn how proper battery storage, commutator cleaning, and lubrication can prevent premature motor burnouts on busy job sites.</p>
+                <a href="#" class="resource-link">Read Full Guide <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-tag">Fasteners & Hardware</div>
+                <h3>Understanding Structural Fastener Grades and Corrosion Ratings</h3>
+                <p>A breakdown of Grade 8 steel bolts, stainless steel grades, and hot-dip galvanized coatings for outdoor and marine environments.</p>
+                <a href="#" class="resource-link">Read Full Guide <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-tag">Electrical Wiring</div>
+                <h3>Industrial Circuit Breakers: Selection and Panel Load Calculations</h3>
+                <p>Guidelines for sizing thermal-magnetic circuit breakers, copper wire gauges, and main distribution load panels safely.</p>
+                <a href="#" class="resource-link">Read Full Guide <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Hassan Traders</h4>
+                <p style="color: var(--text-gray); font-size: 0.9rem;">Providing dependable, top-grade industrial and structural hardware supplies for contractors and commercial businesses.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Product Catalog</a></li>
+                    <li><a href="quote.html">Request a Quote</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Industries</h4>
+                <ul>
+                    <li><a href="categories.html">Construction & Masonry</a></li>
+                    <li><a href="categories.html">Electrical Wiring</a></li>
+                    <li><a href="categories.html">Woodworking</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p style="color: var(--text-gray); font-size: 0.9rem;">Email: info@hassantraders.com<br>Phone: +1 (555) 382-9011</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+           <p>&copy; 2026 <span style="color: var(--accent-yellow);">Hassan Traders.</span> All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

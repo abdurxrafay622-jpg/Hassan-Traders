@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Hassan Traders - Industrial & Home Hardware</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .services-hero {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(15,17,21,0.95), rgba(0,102,255,0.1));
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .services-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .services-hero h1 span {
+            color: var(--accent-yellow);
+        }
+
+        .services-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-gray);
+            font-size: 1.05rem;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 5rem;
+        }
+
+        .service-card {
+            background-color: var(--card-black);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 102, 255, 0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--accent-yellow);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            color: var(--text-white);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+            text-align: left;
+            margin-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+        }
+
+        .service-features li {
+            color: var(--text-white);
+            font-size: 0.85rem;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .service-features li i {
+            color: var(--accent-yellow);
+            font-size: 0.8rem;
+        }
+
+        .cta-banner {
+            background: linear-gradient(135deg, #15181f, #0c0e12);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .cta-banner h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-white);
+        }
+
+        .cta-banner p {
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo"><i class="fa-solid fa-screwdriver-wrench" style="color: var(--accent-yellow);"></i>Hassan<span>Traders</span></a>
+            <button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="bulk-orders.html">B2B</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="brands.html">Brands</a></li>
+                <li><a href="resources.html">Guides</a></li>
+                <li><a href="quote.html">Quote</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="services-hero">
+        <div class="hero-container">
+            <h1>Our Professional <span>Services</span></h1>
+            <p>Beyond supplying hardware, Hassan Traders provides expert support, equipment maintenance, and tailored logistical solutions for contractors and businesses.</p>
+        </div>
+    </section>
+
+    <div class="services-container">
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                <h3>Jobsite Direct Delivery</h3>
+                <p>We deliver heavy equipment, building materials, and bulk tool orders straight to your active construction site on schedule.</p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Scheduled morning dispatch windows</li>
+                    <li><i class="fa-solid fa-check"></i> Heavy-lift crane truck availability</li>
+                    <li><i class="fa-solid fa-check"></i> Real-time shipment tracking</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                <h3>Tool Repair & Calibration</h3>
+                <p>Keep your power tools and precision measurement equipment operating at peak performance with our certified repair center.</p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Authorized warranty service center</li>
+                    <li><i class="fa-solid fa-check"></i> Fast diagnostic turnaround</li>
+                    <li><i class="fa-solid fa-check"></i> Genuine replacement parts</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-handshake"></i></div>
+                <h3>Contractor Consultations</h3>
+                <p>Collaborate with our product experts to map out exact material requirements and budget estimates for complex builds.</p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Material takeoff & estimation</li>
+                    <li><i class="fa-solid fa-check"></i> Custom product sourcing</li>
+                    <li><i class="fa-solid fa-check"></i> Dedicated account management</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                <h3>Vendor Managed Inventory</h3>
+                <p>Let us monitor and restock your workshop or site container so you never run out of essential fasteners or safety gear.</p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Regular stock level audits</li>
+                    <li><i class="fa-solid fa-check"></i> Automated replenishment bins</li>
+                    <li><i class="fa-solid fa-check"></i> Reduced operational downtime</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Safety Equipment Inspection</h3>
+                <p>Ensure your team's harnesses, fall protection gear, and lifting rigging comply with safety standards through our inspection service.</p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> OSHA & industry standard compliance</li>
+                    <li><i class="fa-solid fa-check"></i> Detailed certification records</li>
+                    <li><i class="fa-solid fa-check"></i> On-site testing options</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                <h3>Flexible Commercial Credit</h3>
+                <p>Empower your cash flow with tailored net-30 and net-60 corporate credit accounts designed for growing contractors.</p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Simple application process</li>
+                    <li><i class="fa-solid fa-check"></i> Consolidated monthly billing</li>
+                    <li><i class="fa-solid fa-check"></i> Volume rewards & discounts</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="cta-banner">
+            <h2>Need a Custom Service Solution?</h2>
+            <p>If you have unique project specifications or require a specialized service contract, our team is ready to build a custom plan for you.</p>
+            <a href="contact.html" class="btn btn-yellow">Get in Touch With Us</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Hassan Traders</h4>
+                <p style="color: var(--text-gray); font-size: 0.9rem;">Providing dependable, top-grade industrial and structural hardware supplies for contractors and commercial businesses.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Product Catalog</a></li>
+                    <li><a href="quote.html">Request a Quote</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Industries</h4>
+                <ul>
+                    <li><a href="categories.html">Construction & Masonry</a></li>
+                    <li><a href="categories.html">Electrical Wiring</a></li>
+                    <li><a href="categories.html">Woodworking</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p style="color: var(--text-gray); font-size: 0.9rem;">Email: info@hassantraders.com<br>Phone: +1 (555) 382-9011</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+           <p>&copy; 2026 <span style="color: var(--accent-yellow);">Hassan Traders.</span> All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
