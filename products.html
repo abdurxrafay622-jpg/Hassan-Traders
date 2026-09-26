@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog | Hassan Traders - Industrial & Home Hardware</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .products-hero {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(15,17,21,0.95), rgba(0,102,255,0.1));
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .products-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .products-hero h1 span {
+            color: var(--accent-yellow);
+        }
+
+        .products-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-gray);
+            font-size: 1.05rem;
+        }
+
+        .products-container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .filter-bar {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            background-color: var(--card-black);
+            border: 1px solid var(--border-color);
+            color: var(--text-gray);
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--accent-blue);
+            border-color: var(--accent-blue);
+            color: var(--text-white);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background-color: var(--card-black);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 102, 255, 0.15);
+        }
+
+        .product-image-container {
+            height: 180px;
+            background-color: #15181f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .product-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.85;
+        }
+
+        .product-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-category {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-yellow);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card h3 {
+            font-size: 1.15rem;
+            color: var(--text-white);
+            margin-bottom: 0.8rem;
+        }
+
+        .product-card p {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .product-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+        }
+
+        .product-price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-white);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo"><i class="fa-solid fa-screwdriver-wrench" style="color: var(--accent-yellow);"></i>Hassan<span>Traders</span></a>
+            <button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="bulk-orders.html">B2B</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="brands.html">Brands</a></li>
+                <li><a href="resources.html">Guides</a></li>
+                <li><a href="quote.html">Quote</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="products-hero">
+        <div class="hero-container">
+            <h1>Industrial & Hardware <span>Product Catalog</span></h1>
+            <p>Browse our extensive lineup of heavy-duty power tools, structural fasteners, electrical wiring supplies, and commercial safety equipment.</p>
+        </div>
+    </section>
+
+    <div class="products-container">
+        <div class="filter-bar" id="filterBar">
+            <button class="filter-btn active" data-filter="all">All Products</button>
+            <button class="filter-btn" data-filter="Power Tools">Power Tools</button>
+            <button class="filter-btn" data-filter="Fasteners">Fasteners</button>
+            <button class="filter-btn" data-filter="Electrical">Electrical</button>
+            <button class="filter-btn" data-filter="Plumbing">Plumbing</button>
+            <button class="filter-btn" data-filter="Safety Gear">Safety Gear</button>
+        </div>
+
+       
+        <div class="products-grid" id="productsGrid">
+            <div class="product-card" data-category="Power Tools">
+                <div class="product-image-container">
+                    <img src="images/WhatsApp Image 2026-09-23 at 12.52.04 AM.jpeg" alt="Cordless Hammer Drill">
+                </div>
+                <div class="product-content">
+                    <span class="product-category">Power Tools</span>
+                    <h3>Wall-Mounted Metal Electrical Enclosure(Medium)</h3>
+                    <p>They are heavy-duty, weather-resistant steel or metal cabinets designed to safely house electrical wiring, circuit breakers.</p>
+                    <div class="product-footer">
+                        <span class="product-price">2700 PKR</span>
+                        <a href="quote.html" class="btn btn-yellow" style="padding: 0.4rem 0.9rem; font-size: 0.8rem;">Inquire</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Fasteners">
+                <div class="product-image-container">
+                        <img src="images/WhatsApp Image 2026-09-23 at 12.52.58 AM.jpeg" alt="Hex Bolt Assortment">
+                </div>
+                <div class="product-content">
+                    <span class="product-category">Fasteners</span>
+                    <h3>Weatherproof Miniature Circuit Breaker</h3>
+                    <p>The hinged cover protects internal switches from moisture, dust, and accidental bumping while letting you easily check breaker status or reset a tripped switch without opening the box.</p>
+                    <div class="product-footer">
+                        <span class="product-price">200 PKR</span>
+                        <a href="quote.html" class="btn btn-yellow" style="padding: 0.4rem 0.9rem; font-size: 0.8rem;">Inquire</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Electrical">
+                <div class="product-image-container">
+                    <img src="images/Multi-Way Weatherproof Plastic Consumer Unit.jpeg" alt="Breaker Panel">
+                </div>
+                <div class="product-content">
+                    <span class="product-category">Electrical</span>
+                    <h3>Multi-Way Weatherproof Plastic Consumer Unit</h3>
+                    <p>this version is wider to accommodate more circuit breakers (typically holding around 4 to 8 modules on an internal DIN rail).</p>
+                    <div class="product-footer">
+                        <span class="product-price">500 PKR</span>
+                        <a href="quote.html" class="btn btn-yellow" style="padding: 0.4rem 0.9rem; font-size: 0.8rem;">Inquire</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Plumbing">
+                <div class="product-image-container">
+                    <img src="images/HT 12-Way Weatherproof Plastic Distribution Box.jpeg" alt="PEX Piping">
+                </div>
+                <div class="product-content">
+                    <span class="product-category">Plumbing</span>
+                    <h3>HT 12-Way Weatherproof Plastic Distribution Box</h3>
+                    <p>It features a dark smoked-tinted transparent flip cover, making it ideal for indoor or outdoor electrical setups where you need protection from dust and moisture.</p>
+                    <div class="product-footer">
+                        <span class="product-price">1200 PKR</span>
+                        <a href="quote.html" class="btn btn-yellow" style="padding: 0.4rem 0.9rem; font-size: 0.8rem;">Inquire</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Safety Gear">
+                <div class="product-image-container">
+                    <img src="images/CHINT 2-Pole (DP) 25A Miniature Circuit Breaker.jpeg" alt="Safety Harness">
+                </div>
+                <div class="product-content">
+                    <span class="product-category">Safety Gear</span>
+                    <h3>CHINT 2-Pole (DP) 25A Miniature Circuit Breaker</h3>
+                    <p>Trip Curve / Rating: C25 (25 Amps, Type C curve—ideal for loads with moderate inrush currents like motors, air conditioners, and transformers).</p>
+                    <div class="product-footer">
+                        <span class="product-price">1200 PKR</span>
+                        <a href="quote.html" class="btn btn-yellow" style="padding: 0.4rem 0.9rem; font-size: 0.8rem;">Inquire</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Power Tools">
+                <div class="product-image-container">
+                    <img src="images/Schneider Electric 1-Pole (Single Pole).jpeg" alt="Demolition Hammer">
+                </div>
+                <div class="product-content">
+                    <span class="product-category">Power Tools</span>
+                    <h3>Schneider Electric 1-Pole (Single Pole)</h3>
+                    <p>It is a compact, high-quality modular circuit breaker designed to mount onto a standard DIN rail inside a distribution box.</p>
+                    <div class="product-footer">
+                        <span class="product-price">650 PKR</span>
+                        <a href="quote.html" class="btn btn-yellow" style="padding: 0.4rem 0.9rem; font-size: 0.8rem;">Inquire</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Fasteners">
+                <div class="product-image-container">
+                    <img src="images/OPAS 3-Position Rotary Cam Switch.jpeg" alt="Stainless Steel Screws">
+                </div>
+                <div class="product-content">
+                    <span class="product-category">Fasteners</span>
+                    <h3>OPAS 3-Position Rotary Cam Switch</h3>
+                    <p>It features a panel-mount design with settings for 0 (Off), 1, and 2.</p>
+                    <div class="product-footer">
+                        <span class="product-price">1300 PKR</span>
+                        <a href="quote.html" class="btn btn-yellow" style="padding: 0.4rem 0.9rem; font-size: 0.8rem;">Inquire</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Electrical">
+                <div class="product-image-container">
+                    
+                    <img src="images/Small DC Electric Motor.jpeg" alt="Copper Wire Spool">
+                </div>
+                <div class="product-content">
+                    <span class="product-category">Electrical</span>
+                    <h3>Small DC Electric Motor</h3>
+                    <p>It features a black cylindrical metal housing, built-in mounting flanges or brackets for securing it into position, power wires extending from the back.</p>
+                    <div class="product-footer">
+                        <span class="product-price">1500 PKR</span>
+                        <a href="quote.html" class="btn btn-yellow" style="padding: 0.4rem 0.9rem; font-size: 0.8rem;">Inquire</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Plumbing">
+                <div class="product-image-container">
+                    <img src="images/Dual-Shaft Electric Motor.jpeg" alt="Brass Ball Valve">
+                </div>
+                <div class="product-content">
+                    <span class="product-category">Plumbing</span>
+                    <h3>Dual-Shaft Electric Motor</h3>
+                    <p>It features a black cylindrical motor housing, extended drive shafts protruding from both sides (one long straight shaft on the left and a threaded/stepped shaft on the right).</p>
+                    <div class="product-footer">
+                        <span class="product-price">1500 PKR</span>
+                        <a href="quote.html" class="btn btn-yellow" style="padding: 0.4rem 0.9rem; font-size: 0.8rem;">Inquire</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Safety Gear">
+                <div class="product-image-container">
+                    <img src="images/Reena Automatic Battery Charger (30A, 12V).jpeg" alt="Welding Helmet">
+                </div>
+                <div class="product-content">
+                    <span class="product-category">Safety Gear</span>
+                    <h3>Reena Automatic Battery Charger (30A, 12V)</h3>
+                    <p>Features a double MOSFET configuration and 100% copper winding.</p>
+                    <div class="product-footer">
+                        <span class="product-price">3000 PKR</span>
+                        <a href="quote.html" class="btn btn-yellow" style="padding: 0.4rem 0.9rem; font-size: 0.8rem;">Inquire</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Power Tools">
+                <div class="product-image-container">
+                    <img src="images/12V DC Switch Mode Power Supply.jpeg" alt="Angle Grinder">
+                </div>
+                <div class="product-content">
+                    <span class="product-category">Power Tools</span>
+                    <h3>12V DC Switch Mode Power Supply</h3>
+                    <p>Features an electronic transformer (the yellow block), filtering capacitors, diodes, and heat sinks designed to step down and convert alternating current (AC) to direct current (DC) for electronic devices or chargers.</p>
+                    <div class="product-footer">
+                        <span class="product-price">1800 PKR</span>
+                        <a href="quote.html" class="btn btn-yellow" style="padding: 0.4rem 0.9rem; font-size: 0.8rem;">Inquire</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Fasteners">
+                <div class="product-image-container">
+                    <img src="images/Universal Remote Control Receiver Circuit Board and Remote Control Kit.jpeg" alt="Concrete Anchor Bolts">
+                </div>
+                <div class="product-content">
+                    <span class="product-category">Fasteners</span>
+                    <h3>Universal Remote Control Receiver Circuit Board and Remote Control Kit</h3>
+                    <p>Includes buttons for power, speed levels (1 through 6, plus a "Full Speed" option), and timer intervals (2H, 4H, 6H, 8H).</p>
+                    <div class="product-footer">
+                        <span class="product-price">1300 PKR</span>
+                        <a href="quote.html" class="btn btn-yellow" style="padding: 0.4rem 0.9rem; font-size: 0.8rem;">Inquire</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Electrical">
+                <div class="product-image-container">
+                    <img src="images/Combination Spanner Set.jpeg" alt="Combination Spanner Set">
+                </div>
+                <div class="product-content">
+                    <span class="product-category">Electrical</span>
+                    <h3>Combination Spanner Set </h3>
+                    <p>Each tool is a combination wrench, meaning one end is an open-ended spanner and the other is a closed ring (box) end of the same size, making them versatile for tightening and loosening nuts and bolts in mechanical and automotive work.</p>
+                    <div class="product-footer">
+                        <span class="product-price">8000 PKR</span>
+                        <a href="quote.html" class="btn btn-yellow" style="padding: 0.4rem 0.9rem; font-size: 0.8rem;">Inquire</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Plumbing">
+                <div class="product-image-container">
+                    <img src="images/PRIDE Professional 3-Piece Plier Set.jpeg" alt="PRIDE Professional 3-Piece Plier Set">
+                </div>
+                <div class="product-content">
+                    <span class="product-category">Plumbing</span>
+                    <h3>PRIDE Professional 3-Piece Plier Set</h3>
+                    <p>Rigid PVC drainage fittings engineered for dependable pressure-rated fluid transport lines.</p>
+                    <div class="product-footer">
+                        <span class="product-price">2100 PKR</span>
+                        <a href="quote.html" class="btn btn-yellow" style="padding: 0.4rem 0.9rem; font-size: 0.8rem;">Inquire</a>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="product-card" data-category="Safety Gear">
+                <div class="product-image-container">
+                    <!-- TODO: Replace with actual product image URL -->
+                    <img src="images/T-Handle Hex Wrench.jpeg" alt="T-Handle Hex Wrench">
+                </div>
+                <div class="product-content">
+                    <span class="product-category">Safety Gear</span>
+                    <h3>T-Handle Hex Wrench</h3>
+                    <p>It features a long steel shaft with a hex tip on the end and a crosswise T-handle (often coated with vinyl or rubber like the yellow grip shown).</p>
+                    <div class="product-footer">
+                        <span class="product-price">400 PKR</span>
+                        <a href="quote.html" class="btn btn-yellow" style="padding: 0.4rem 0.9rem; font-size: 0.8rem;">Inquire</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Hassan Traders</h4>
+                <p style="color: var(--text-gray); font-size: 0.9rem;">Providing dependable, top-grade industrial and structural hardware supplies for contractors and commercial businesses.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Product Catalog</a></li>
+                    <li><a href="quote.html">Request a Quote</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Industries</h4>
+                <ul>
+                    <li><a href="categories.html">Construction & Masonry</a></li>
+                    <li><a href="categories.html">Electrical Wiring</a></li>
+                    <li><a href="categories.html">Woodworking</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p style="color: var(--text-gray); font-size: 0.9rem;">Email: info@hassantraders.com<br>Phone: +1 (555) 382-9011</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hassan Traders. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('.product-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filterValue = button.getAttribute('data-filter');
+
+                productCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filterValue === 'all' || category === filterValue) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
