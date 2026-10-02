@@ -174,5 +174,16 @@
     </footer>
 
     <script src="script.js"></script>
+<script>
+        const userSession = localStorage.getItem('ht_logged_in_user');
+        
+        if (!userSession) {
+            window.location.replace('login.html');
+            
+            // Fallback safety measure: blank out the screen if execution continues for a split second
+            document.documentElement.innerHTML = '';
+            throw new Error('Unauthorized access blocked.');
+        }
+    </script>
 </body>
 </html>

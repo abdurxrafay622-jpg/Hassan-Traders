@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hassan Traders - Login</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .auth-container {
+            background: #111827;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid #1f2937;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #d1d5db;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            background: #1f2937;
+            border: 1px solid #374151;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 14px;
+        }
+        input:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #2563eb;
+        }
+        .message {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 13px;
+        }
+        .success { color: #10b981; }
+        .error { color: #ef4444; }
+        .switch-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 13px;
+            color: #9ca3af;
+        }
+        .switch-link a {
+            color: #fbbf24;
+            text-decoration: none;
+        }
+        .switch-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="auth-container">
+        <h2>Hassan Traders</h2>
+        <form id="login-form">
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="login-email" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="login-password" required>
+            </div>
+            <button type="submit">Log In</button>
+        </form>
+        <div id="login-msg" class="message"></div>
+        
+        <div class="switch-link">
+            Don't have an account? <a href="signup.html">Sign Up</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value.trim();
+            const password = document.getElementById('login-password').value;
+            const msgBox = document.getElementById('login-msg');
+
+            let users = JSON.parse(localStorage.getItem('ht_users')) || [];
+
+            const user = users.find(u => u.email === email && u.password === password);
+            if (!user) {
+                msgBox.className = 'message error';
+                msgBox.innerText = 'Invalid email or password.';
+                return;
+            }
+
+            localStorage.setItem('ht_logged_in_user', email);
+            msgBox.className = 'message success';
+            msgBox.innerText = 'Login successful! Welcome back.';
+
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 800);
+        });
+    </script>
+</body>
+</html>
