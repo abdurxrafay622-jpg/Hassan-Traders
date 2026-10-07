@@ -13,6 +13,23 @@
         if (!localStorage.getItem('ht_logged_in_user')) {
             window.location.href = 'login.html';
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+        const logoutBtn = document.getElementById('logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Clear user session from localStorage
+                localStorage.removeItem('ht_logged_in_user');
+                localStorage.removeItem('ht_user_role');
+                
+                // Force redirect back to login page
+                window.location.href = 'login.html';
+            });
+        } else {
+            console.log("Logout button not found on this page.");
+        }
+    });
     </script>
 </head>
 <body>
