@@ -26,6 +26,8 @@
                 <li><a href="quote.html">Quote</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+
+            <button id="logout-btn" style="background: #ef4444; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: bold;">Logout</button>
         </nav>
     </header>
 
@@ -174,15 +176,15 @@
 
     <script src="script.js"></script>
 <script>
-        const userSession = localStorage.getItem('ht_logged_in_user');
+    document.getElementById('logout-btn').addEventListener('click', () => {
+        // Clear the user session from localStorage
+        localStorage.removeItem('ht_logged_in_user');
+        localStorage.removeItem('ht_user_role');
         
-        if (!userSession) {
-            window.location.replace('login.html');
-            
-            // Fallback safety measure: blank out the screen if execution continues for a split second
-            document.documentElement.innerHTML = '';
-            throw new Error('Unauthorized access blocked.');
-        }
-    </script>
+        // Redirect back to the login page
+        window.location.href = 'login.html';
+    });
+</script>
+</script>
 </body>
 </html>
