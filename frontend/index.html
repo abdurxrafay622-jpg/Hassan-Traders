@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script>
+        // Force redirect to login if user is not authenticated
+        if (!localStorage.getItem('ht_logged_in_user')) {
+            window.location.href = 'login.html';
+        }
+    </script>
 </head>
 <body>
 
@@ -175,16 +182,6 @@
     </footer>
 
     <script src="script.js"></script>
-<script>
-    document.getElementById('logout-btn').addEventListener('click', () => {
-        // Clear the user session from localStorage
-        localStorage.removeItem('ht_logged_in_user');
-        localStorage.removeItem('ht_user_role');
-        
-        // Redirect back to the login page
-        window.location.href = 'login.html';
-    });
-</script>
-</script>
+
 </body>
 </html>
